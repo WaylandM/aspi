@@ -2,6 +2,16 @@
 
 # remove uninfected hosts
 removeUninfected <- function(x){
+  
+  if(length(x[1,])!=2)
+    stop("x must contain exactly 2 columns")
+  
+  if(length(x[,1])<1)
+    stop("x must contain data for at least one host")
+  
+  if(!is.numeric(x[,1]) | !is.numeric(x[,2]))
+    stop("Both columns of x must be numeric")
+  
   return(x[apply(x,1,sum)>0,])
 }
 
@@ -13,6 +23,18 @@ removeUninfected <- function(x){
 g.test <- function(x){
   # convert to data.frame if matrix - omit from web app, because will be checked before this function called
   x <- as.data.frame(x)
+  
+  if(length(x[1,])!=2)
+    stop("x must contain exactly 2 columns")
+  
+  if(length(x[,1])<1)
+    stop("x must contain data for at least one host")
+  
+  if(!is.numeric(x[,1]) | !is.numeric(x[,2]))
+    stop("Both columns of x must be numeric")
+  
+  if(sum(x==0)!=0)
+    stop("Data contains zero counts!")
   
   calcG <- function(fL, fR, df=1){
     fSum <- fL+fR
@@ -60,6 +82,15 @@ g.test <- function(x){
 # Exact Binomial Test
 eb.test <- function(x){
   
+  if(length(x[1,])!=2)
+    stop("x must contain exactly 2 columns")
+  
+  if(length(x[,1])<1)
+    stop("x must contain data for at least one host")
+  
+  if(!is.numeric(x[,1]) | !is.numeric(x[,2]))
+    stop("Both columns of x must be numeric")
+  
   binomTestP <- function(fL, fR){
     return(binom.test(fL, fL+fR, p=0.5, alternative='two.sided')$p.value)
   }
@@ -86,4 +117,57 @@ eb.test <- function(x){
   return(output)
   
 }
+
+plotHistogram <- function(x, nBreaks=10, ...){
+  if(length(x[1,])!=2)
+    stop("x must contain exactly 2 columns")
+  
+  if(length(x[,1])<1)
+    stop("x must contain data for at least one host")
+  
+  if(!is.numeric(x[,1]) | !is.numeric(x[,2]))
+    stop("Both columns of x must be numeric")
+  
+  if(sum(x==0)!=0)
+    stop("Data contains zero counts!")
+  
+  logRatios <- log2(x[,2]/x[,1])
+  bins <- pretty(c(min(logRatios), max(logRatios)), n=as.numeric(nBreaks)+1)
+  #bins <- pretty(c(min(logRatios()), max(logRatios())), n=as.numeric(input$nBreaks)+1)
+  histColours <- c(rep("#4DAF4A", sum(bins<0)), rep("#984EA3", sum(bins>0)))
+  hist(logRatios, col=histColours, breaks=bins, xlab=expression(paste("log"[2],"(right/left)")), ...)
+}
+
+plotVolcano <- function(x, test="G", pAdj="BH", sigThresh=0.05, ...){
+  if(length(x[1,])!=2)
+    stop("x must contain exactly 2 columns")
+  
+  if(length(x[,1])<1)
+    stop("x must contain data for at least one host")
+  
+  if(!is.numeric(x[,1]) | !is.numeric(x[,2]))
+    stop("Both columns of x must be numeric")
+  
+  if(sum(x==0)!=0)
+    stop("Data contains zero counts!")
+  
+  if(test=="G"){
+    testResults <- g.test(x)
+  }else{
+    testResults <- eb.test(x)
+  }
+  
+  if(pAdj=="BH"){
+    log10p <- log10(testResults$hosts$BH)
+  }else{
+    log10p <- log10(testResults$hosts$Bonferroni)
+  }
+  
+  logRatios <- log2(x[,2]/x[,1])
+  plotColours <- ifelse(log10p < log10(as.numeric(sigThresh)), "#E41A1C", "#377EB8")
+  plotSymbols <- ifelse(log10p < log10(as.numeric(sigThresh)), 15, 16)
+  plot(logRatios, -log10p,  col=plotColours, pch = plotSymbols, xlab=expression(paste("log"[2],"(right/left)")), ylab=expression(paste("-log"[10],"(p-value)")), ...)
+  abline(h=-log10(as.numeric(sigThresh)), col="gray10", lty=2)
+}
+
 

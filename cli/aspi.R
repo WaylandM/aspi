@@ -1,4 +1,4 @@
-# FUNCTIONS TO TEST FOR BILATERAL ASYMMETRY
+# Analysis of Symmetry of Parasitic Infections (ASPI)
 
 # remove uninfected hosts
 removeUninfected <- function(x){

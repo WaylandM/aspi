@@ -17,4 +17,4 @@ The following page will open in your web browser:
 
 
 
-<img src="https://raw.githubusercontent.com/WaylandM/meristogram/master/images/meristogram_gui_start.png" width="450" alt="Meristogram GUI before data loaded">
+<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/aspi_start.png" width="450" alt="Meristogram GUI before data loaded">

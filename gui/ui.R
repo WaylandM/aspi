@@ -48,7 +48,7 @@ shinyUI(fluidPage(
                   selected = 0.05),
       br(),
       
-      helpText( a("Help", href="https://github.com/WaylandM/baa/blob/master/doc/gui.md", target="_blank")), width=4),
+      helpText( a("Help", href="https://github.com/WaylandM/aspi/blob/master/doc/gui.md", target="_blank")), width=4),
 
     # Show a plot of the generated distribution
     mainPanel(

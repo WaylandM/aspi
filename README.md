@@ -1,9 +1,11 @@
 #Analysis of Symmetry of Parasitic Infections (ASPI)
-When parasites invade paired structures of their host non-randomly, the resulting asymmetry may have both pathological and ecological significance. To facilitate the detection and visualization of asymmetric infections we have developed a free web application, ASPI, using [R](http://www.r-project.org) and [Shiny](http://shiny.rstudio.com/):
+ASPI is a tool for the detection and visualization of asymmetry in parasitic infections, implemented using [R](http://www.r-project.org) and [Shiny](http://shiny.rstudio.com/). ASPI can detect both consistent bias towards one side, and inconsistent bias in which the left side is favored in some hosts and the right in others.
+
+A free web application is available here:
 
 [https://wayland.shinyapps.io/ASPI](https://wayland.shinyapps.io/ASPI)
 
-ASPI can detect both consistent bias towards one side, and inconsistent bias in which the left side is favored in some hosts and the right in others.
+ASPIs functions can also be called from the command line.
 
 
 

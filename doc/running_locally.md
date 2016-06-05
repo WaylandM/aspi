@@ -18,3 +18,5 @@ The following page will open in your web browser:
 
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/aspi_start.png" width="450" alt="Meristogram GUI before data loaded">
+
+A guide to using the web application can be found [here](https://github.com/WaylandM/aspi/blob/master/doc/gui.md)

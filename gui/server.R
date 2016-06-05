@@ -1,4 +1,30 @@
-# Analysis of Symmetry of Parasite Infections (ASPI)
+##################################################################################
+#                                                                                #
+#  Analysis of Symmetry of Parasitic Infections (ASPI)                           #
+#                                                                                #
+#  Version 0.1                                                                   #
+#                                                                                #
+#  Copyright (C) 2016 Matthew Thomas Wayland                                     #
+#                                                                                #
+#  This file is part of Analysis of Symmetry of Parasitic Infections.            #
+#                                                                                #
+#  Analysis of Symmetry of Parasitic Infections is free software: you can        #
+#  redistribute it and/or modify it under the terms of the GNU General Public    #
+#  License as published by the Free Software Foundation, either version 3 of     #
+#  the License, or (at your option) any later version.                           #
+#                                                                                #
+#  Analysis of Symmetry of Parasitic Infections is distributed in the hope that  #
+#  it will be useful, but WITHOUT ANY WARRANTY; without even the implied         #
+#  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the     #
+#  GNU General Public License for more details.                                  #
+#                                                                                #
+#  You should have received a copy of the GNU General Public License along       #
+#  with Analysis of Symmetry of Parasitic Infections.                            #
+#  If not, see <http://www.gnu.org/licenses/>.                                   #
+#                                                                                #
+#                                                                                #
+##################################################################################
+
 
 library(shiny)
 
@@ -9,13 +35,13 @@ removeUninfected <- function(x){
   return(x[apply(x,1,sum)>0,])
 }
 
-# G-test
+# Replicated G-tests of goodness-of-fit
 # This function implements Sokal & Rohlf's (1995) G-test for the specific case of an expected 1:1 ratio
 # Reference R.R. Sokal & F.J. Rohlf (1995) Biometry. 3rd Edition. New York: W.H. Freeman and Company. 887 pp.
 # The function takes as its argument a matrix or data frame with two numeric columns; first column is for 
 # left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names.
 g.test <- function(x){
-  # convert to data.frame if matrix - omit from web app, because will be checked before this function called
+  # convert to data.frame if matrix
   x <- as.data.frame(x)
   
   calcG <- function(fL, fR, df=1){
@@ -30,11 +56,11 @@ g.test <- function(x){
     return(calcG(r[1],r[2]))
   })
   
-  Bonferroni <- p.adjust(individualG[2,], 'bonferroni')
+  Holm <- p.adjust(individualG[2,], 'holm')
   BH <- p.adjust(individualG[2,], 'BH')
   
-  individualG <- as.data.frame(cbind(row.names(x), x, t(individualG), BH, Bonferroni))
-  names(individualG) <- c("Host", "Left", "Right", "G", "p", "BH", "Bonferroni")
+  individualG <- as.data.frame(cbind(row.names(x), x, t(individualG), BH, Holm))
+  names(individualG) <- c("Host", "Left", "Right", "G", "p", "BH", "Holm")
   
   # Total G (GT)
   GT <- sum(individualG$G)
@@ -73,11 +99,11 @@ eb.test <- function(x){
     return(binomTestP(r[1],r[2]))
   })
   
-  Bonferroni <- p.adjust(individualP, 'bonferroni')
+  Holm <- p.adjust(individualP, 'holm')
   BH <- p.adjust(individualP, 'BH')
   
-  individualP <- as.data.frame(cbind(row.names(x), x, individualP, BH, Bonferroni))
-  names(individualP) <- c("Host", "Left", "Right", "p", "BH", "Bonferroni")
+  individualP <- as.data.frame(cbind(row.names(x), x, individualP, BH, Holm))
+  names(individualP) <- c("Host", "Left", "Right", "p", "BH", "Holm")
   
   # Binomial tests for pooled hosts
   fLSum <- sum(x[,1])
@@ -91,6 +117,7 @@ eb.test <- function(x){
   
 }
 
+# Shiny application
 shinyServer(function(input, output, session) {
   
   plotHistogram <- function(){
@@ -156,7 +183,7 @@ shinyServer(function(input, output, session) {
     if(input$multTest=="bh")
       return(testResults()$hosts$BH)
     else
-      return(testResults()$hosts$Bonferroni)
+      return(testResults()$hosts$Holm)
   })
   
   log10p <- reactive({

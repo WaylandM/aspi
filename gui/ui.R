@@ -1,4 +1,29 @@
-# Analysis of Symmetry of Parasite Infections (ASPI)
+##################################################################################
+#                                                                                #
+#  Analysis of Symmetry of Parasitic Infections (ASPI)                           #
+#                                                                                #
+#  Version 0.1                                                                   #
+#                                                                                #
+#  Copyright (C) 2016 Matthew Thomas Wayland                                     #
+#                                                                                #
+#  This file is part of Analysis of Symmetry of Parasitic Infections.            #
+#                                                                                #
+#  Analysis of Symmetry of Parasitic Infections is free software: you can        #
+#  redistribute it and/or modify it under the terms of the GNU General Public    #
+#  License as published by the Free Software Foundation, either version 3 of     #
+#  the License, or (at your option) any later version.                           #
+#                                                                                #
+#  Analysis of Symmetry of Parasitic Infections is distributed in the hope that  #
+#  it will be useful, but WITHOUT ANY WARRANTY; without even the implied         #
+#  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the     #
+#  GNU General Public License for more details.                                  #
+#                                                                                #
+#  You should have received a copy of the GNU General Public License along       #
+#  with Analysis of Symmetry of Parasitic Infections.                            #
+#  If not, see <http://www.gnu.org/licenses/>.                                   #
+#                                                                                #
+#                                                                                #
+##################################################################################
 
 library(shiny)
 
@@ -16,7 +41,7 @@ shinyUI(fluidPage(
       radioButtons("method", "Method",
                    c("G-test" = "gtest", "Exact Binomial Test" = "binom")),
       radioButtons("multTest", "Multiple Test Correction",
-                   c("Benjamini & Hochberg (False Discovery Rate)" = "bh", "Bonferroni (Familywise Error Rate)" = "bonf")),
+                   c("Benjamini & Hochberg (False Discovery Rate)" = "bh", "Holm (Familywise Error Rate)" = "holm")),
       selectInput(inputId = "sigThresh",
                   label = "Significance level",
                   choices = c(0.001, 0.01, 0.05, 0.1),

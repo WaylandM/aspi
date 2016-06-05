@@ -12,6 +12,6 @@ ASPIs functions can also be called from the command line.
 ##Documentation
 [Using the web interface](https://github.com/WaylandM/aspi/blob/master/doc/gui.md)
 
-Running the web application on your own computer
+[Running the web application on your own computer](https://github.com/WaylandM/aspi/blob/master/doc/running_locally.md)
 
 [Using the command line interface](https://github.com/WaylandM/aspi/blob/master/doc/cli.md)

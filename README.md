@@ -9,5 +9,7 @@ ASPI can detect both consistent bias towards one side, and inconsistent bias in 
 
 ##Documentation
 [Using the web interface](https://github.com/WaylandM/aspi/blob/master/doc/gui.md)
+
 Running the web application on your own computer
-Using the command line interface
+
+[Using the command line interface](https://github.com/WaylandM/aspi/blob/master/doc/cli.md)

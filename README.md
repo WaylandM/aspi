@@ -1,7 +1,7 @@
 #Analysis of Symmetry of Parasitic Infections (ASPI)
 ASPI is a tool for the detection and visualization of asymmetry in parasitic infections, implemented using [R](http://www.r-project.org) and [Shiny](http://shiny.rstudio.com/). ASPI can detect both consistent bias towards one side, and inconsistent bias in which the left side is favored in some hosts and the right in others.
 
-A free web application is available here:
+A free web application is available:
 
 [https://wayland.shinyapps.io/ASPI](https://wayland.shinyapps.io/ASPI)
 

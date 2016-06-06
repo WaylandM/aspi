@@ -118,9 +118,14 @@ Create a histogram showing fold differences in abundance between left and right:
 plotHistogram(diplostomum,nBreaks=20,main="Diplostomum metacercariae in eyes of ruffe")
 ```
 
+<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/histogram.png" width="550" alt="Histogram">
+
+
 ###5. Create Volcano Plot
 Create a volcano plot using FDR corrected p-values from exact binomial tests and a significance threshold of 0.1:
 ```r
 plotVolcano(diplostomum, test="G", pAdj="EB", sigThresh=0.1, main="Diplostomum metacercariae in eyes of ruffe")
 ```
+
+<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/volcano_plot.png" width="550" alt="Volcano Plot">
 

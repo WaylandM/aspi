@@ -44,7 +44,7 @@ This function takes the following arguments:
 * **...** - optionally, additional arguments can be passed to methods, such as graphical parameters.
 
 ####plot.Volcano
-**plot.Volcano** creates a volcano plot, *i.e.* a scatterplot of statistical significance (-log10(p-value)) *vs* fold difference (log2 ratio)
+**plot.Volcano** creates a volcano plot, *i.e.* a scatterplot of statistical significance (-log10(p-value)) *vs* fold difference (log2 ratio - as calculated for the histogram above) in parasite abundance between left and right. Each point in the scatterplot represents the parasite distribution in an individual host. A dashed horizontal line represents the user-defined p-value threshold for significance. If a parasite distribution deviates significantly from symmetry it is shown as a red square, otherwise as a blue circle.
 
 ##How to use the CLI
 

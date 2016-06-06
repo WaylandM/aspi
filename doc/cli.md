@@ -5,6 +5,10 @@ The script [aspi.R](https://github.com/WaylandM/aspi/blob/master/CLI/aspi.R) pro
 
 
 ####removeUninfected
+**removeUninfected** takes as its argument a data.frame containing exactly two columns: 
+left: counts of parasites on the left side of the host
+right: counts of parasites on the right side of the host
+It returns the data.frame after removing uninfected hosts (i.e. those with zero counts for both left and right sides).
 
 ####g.test
 

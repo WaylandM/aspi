@@ -77,7 +77,7 @@ The input file format for ASPI is comma separated value (CSV) with three columns
 
 Example data files can be found in: https://github.com/WaylandM/aspi/tree/master/data/parasites
 
-To read in an example data file from the meristogram repository on github, use:
+To read in an example data file from the aspi repository on github, use:
 ```r
 diplostomum <- read.csv(text=getURL("https://raw.githubusercontent.com/WaylandM/aspi/master/data/parasites/Diplostomum_eyes_excluding_lenses.csv"), row.names=1)
 ```

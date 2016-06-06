@@ -1,5 +1,7 @@
 #ASPI Graphical User Interface (GUI)
 
+This is a guide to using the web application. Guidance on interpretation of the results of the statistical tests are provided [here](https://github.com/WaylandM/aspi/blob/master/doc/statistical_tests_interpretation.md)
+
 ##1. Read data
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/start.PNG" width="550" alt="Start screen">

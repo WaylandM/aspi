@@ -69,4 +69,20 @@ Alternatively, if you have a local copy of meristogram.R you can read it using *
 source("~/aspi.R")
 ```
 
+###2. Read parasite infection data
+The input file format for ASPI is comma separated value (CSV) with three columns:
+* **host id** - unique id for host
+* **left** - number of parasites in/on organ/structure on left
+* **right** - number of parasites in/on organ/structure on right
+
+Example data files can be found in: https://github.com/WaylandM/aspi/tree/master/data/parasites
+
+To read in an example data file from the meristogram repository on github, use:
+```r
+diplostomum <- read.csv(text=getURL("https://raw.githubusercontent.com/WaylandM/aspi/master/data/parasites/Diplostomum_eyes_excluding_lenses.csv"), row.names=1)
+```
+Alternatively, a locally stored hook measurement file can be read using:
+```r
+diplostomum <- read.csv("Diplostomum_eyes_excluding_lenses.csv", row.names=1)
+```
 

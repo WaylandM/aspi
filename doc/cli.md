@@ -44,7 +44,7 @@ This function takes the following arguments:
 * **...** - optionally, additional arguments can be passed to methods, such as graphical parameters.
 
 ####plot.Volcano
-**plot.Volcano** creates a volcano plot, *i.e.* 
+**plot.Volcano** creates a volcano plot, *i.e.* a scatterplot of statistical significance (-log10(p-value)) *vs* fold difference (log2 ratio)
 
 ##How to use the CLI
 

@@ -91,4 +91,36 @@ If you want to know how many hosts are represented in the data.frame, use:
 length(diplostomum[,1])
 ```
 
+If you think there may be records for uninfected hosts in your data.frame it is important to run the following command before performing statistical tests or creating graphs:
+```r
+diplostomum <- removeUninfected(diplostomum)
+```
+
+###3. Detect asymmetry
+To perform replicated G-tests of goodness-of-fit to detect asymmetry in parasite distributions, run the following command:
+```r
+gTestResults <- g.test(diplostomum)
+```
+
+To inspect the results of the total, heterogeneity and pooled G-tests, run:
+```r
+gTestResults$summary
+```
+
+The results for the G-tests on individual hosts is found in:
+```r
+gTestResults$hosts
+```
+
+###4. Create Histogram
+Create a histogram showing fold differences in abundance between left and right:
+```r
+plotHistogram(diplostomum,nBreaks=20,main="Diplostomum metacercariae in eyes of ruffe")
+```
+
+###5. Create Volcano Plot
+Create a volcano plot using FDR corrected p-values from exact binomial tests and a significance threshold of 0.1:
+```r
+plotVolcano(diplostomum, test="G", pAdj="EB", sigThresh=0.1, main="Diplostomum metacercariae in eyes of ruffe")
+```
 

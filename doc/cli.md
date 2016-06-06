@@ -41,10 +41,17 @@ It returns a list containing two elements:
 This function takes the following arguments:
 * **x** - a matrix or data frame with two numeric columns; first column is for left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names.
 * **nBreaks** - a single number giving the number of cells for the histogram.
-* **...** - optionally, additional arguments can be passed to methods, such as graphical parameters.
+* **...** - optionally, additional arguments can be passed, such as graphical parameters.
 
 ####plot.Volcano
 **plot.Volcano** creates a volcano plot, *i.e.* a scatterplot of statistical significance (-log10(p-value)) *vs* fold difference (log2 ratio - as calculated for the histogram above) in parasite abundance between left and right. Each point in the scatterplot represents the parasite distribution in an individual host. A dashed horizontal line represents the user-defined p-value threshold for significance. If a parasite distribution deviates significantly from symmetry it is shown as a red square, otherwise as a blue circle.
+
+**plot.Volcano** takes the following arguments:
+* **x** - a matrix or data frame with two numeric columns; first column is for left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names.
+* **test** - if set to "G" (default) a G-test is performed; otherwise an exact binomial test is performed.
+* **pAdj** - method for correcting p-values for multiple comparisons. If set to "BH" (default), Benjamini & Hochberg's procedure is used to control the false discovery rate (FDR); otherwise Holm's methos is used to control the familywise error rate (FWER).
+* **sigThresh** - significance threshold (defaults to 0.05); p-values below this value will be called significant.
+* *...* - optionally, additional arguments can be passed, such as graphical parameters.
 
 ##How to use the CLI
 

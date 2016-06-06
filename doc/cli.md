@@ -25,6 +25,11 @@ It returns a list containing two data.frames:
 **hosts** - results (G-statistic, raw p-value, FDR corrected p-value, FWER corrected p-value) of individual G-tests on distribution of parasites in each host.
 
 ####eb.test
+This function performs a binomial exact test with the null hypothesis of a 1:1 ratio. It takes as its argument a matrix or data frame with two numeric columns; first column is for left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names.
+
+It returns a list containing two elements:
+**pooled** - p-value for pooled binomial exact test (null hypothesis: the ratio of the total number of parasites from each side doesn't differ from 1:1).
+**hosts** - data.frame of results of binomial exact tests performed on the distribution of parasites in each host
 
 ####plot.Histogram
 

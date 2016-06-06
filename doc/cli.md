@@ -54,4 +54,19 @@ This function takes the following arguments:
 * *...* - optionally, additional arguments can be passed, such as graphical parameters.
 
 ##How to use the CLI
+###1. Read source code
+To read files over https we need to install the RCurl package:
+```r
+install.packages("RCurl", dependencies = TRUE)
+```
+The latest version of the meristogram code can be sourced directly from the meristogram repository on github:
+```r
+library(RCurl)
+eval(expr = parse(text = getURL("https://raw.githubusercontent.com/WaylandM/aspi/master/cli/aspi.R", ssl.verifypeer=FALSE) ))
+```
+Alternatively, if you have a local copy of meristogram.R you can read it using **source**, *e.g.*:
+```r
+source("~/aspi.R")
+```
+
 

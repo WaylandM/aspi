@@ -86,3 +86,9 @@ Alternatively, a locally stored hook measurement file can be read using:
 diplostomum <- read.csv("Diplostomum_eyes_excluding_lenses.csv", row.names=1)
 ```
 
+If you want to know how many hosts are represented in the data.frame, use:
+```r
+length(diplostomum[,1])
+```
+
+

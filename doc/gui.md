@@ -18,6 +18,18 @@ Example data files can be found in: https://github.com/WaylandM/aspi/tree/master
 
 ##2. Select statistical procedures
 
+###Detection of deviation from symmetry
+
+####Replicated G-tests of goodness-of-fit
+
+####Binomial exact test
+
+###Correction for multiple comparisons
+
+####False discovery rate (FDR)
+
+####Familywise error rate (FWER)
+
 ##3. Results Summary
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/summary_tab.PNG" width="550" alt="Summary tab">

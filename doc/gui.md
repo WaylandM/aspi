@@ -6,6 +6,8 @@ This is a guide to using the web application. Data analysis is explained in more
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/start.PNG" width="550" alt="Start screen">
 
+Click on **Browse** button to select input file.
+
 The input file format for ASPI is comma separated value (CSV) with three columns:
 * **host id** - unique id for host
 * **left** - number of parasites in/on organ/structure on left

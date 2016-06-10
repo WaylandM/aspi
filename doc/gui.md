@@ -18,17 +18,17 @@ Example data files can be found in: https://github.com/WaylandM/aspi/tree/master
 
 ##2. Select statistical procedures
 
-###Detection of deviation from symmetry
+###2.1 Detection of deviation from symmetry
 
-####Replicated G-tests of goodness-of-fit
+####2.1.1 Replicated G-tests of goodness-of-fit
 
-####Binomial exact test
+####2.1.2 Binomial exact test
 
-###Correction for multiple comparisons
+###2.2 Correction for multiple comparisons
 
-####False discovery rate (FDR)
+####2.2.1 False discovery rate (FDR)
 
-####Familywise error rate (FWER)
+####2.2.2 Familywise error rate (FWER)
 
 ##3. Results Summary
 

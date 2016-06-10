@@ -25,6 +25,7 @@ Example data files can be found in: https://github.com/WaylandM/aspi/tree/master
 ####2.1.2 Binomial exact test
 
 ###2.2 Correction for multiple comparisons
+When applying hypothesis tests to individual hosts we have to control for multiple comparisons using one of the following two procedures:
 
 ####2.2.1 False discovery rate (FDR)
 

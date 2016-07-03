@@ -52,8 +52,11 @@ Holm, S. (1979) A simple sequentially rejective multiple test procedure. Scandin
 
 ##3. Results Summary
 
+After uploading a data file, results are displayed in four tabs, the first of which is the summmary:
+
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/summary_tab.PNG" width="550" alt="Summary tab">
 
+The number of infections reported to be asymmetric will depend on the statistical tests used (replicated g-tests *vs* binomial exact tests), the procedure used to correct for multiple comparisons (control of FDR *vs* FWER) and the chosen significance level. 
 
 ##4. Individual hosts
 

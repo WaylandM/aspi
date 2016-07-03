@@ -52,24 +52,39 @@ Holm, S. (1979) A simple sequentially rejective multiple test procedure. Scandin
 
 ##3. Results Summary
 
-After uploading a data file, results are displayed in four tabs, the first of which is the summmary:
+After uploading a data file, results are displayed in four tabs, the first of which is the summary:
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/summary_tab.PNG" width="550" alt="Summary tab">
 
-The number of infections reported to be asymmetric will depend on the statistical tests used (replicated g-tests *vs* binomial exact tests), the procedure used to correct for multiple comparisons (control of FDR *vs* FWER) and the chosen significance level. 
+The number of infections reported to be asymmetric will depend on the statistical test used (G-test *vs* binomial exact test), the procedure used to correct for multiple comparisons (control of FDR *vs* FWER) and the chosen significance threshold. 
 
 ##4. Individual hosts
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/individual_hosts_tab.PNG" width="550" alt="Start screen">
+
+This tab shows the results of indvidual hypothesis tests applied to each host. In the case of the G-test, seven columns are displayed:
+* **Host** - unique host identifier
+* **Left** - number of parasites on left
+* **Right** - number of parasites on right
+* **G** - test statistic
+* **p** - p-value for G-test
+* **BH** - FDR corrected p-value (Benjamini & Hochberg's procedure)
+* **Holm** - FWER corrected p-value (Holm's procedure)
+
+If the exact binomial test is used, the test statistic column is not displayed. Columns can be sorted using the arrows in the column headers. Results can be downloaded as a text file (comma-separated-value).
+
 
 
 ##5. Histogram
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/histogram_tab.PNG" width="550" alt="Start screen">
 
+The histogram shows the distribution of fold differences in abundance between left and right sides. For each host the number of parasites on the right is divided by the number on the left, and the result is binary log transformed. The binary log ratio will be negative if there are more parasites on the left than right, and positive if there are more parasites on the right than left. A binary log ratio of one corresponds to a one-fold difference, i.e. double the number of parasites. Perfect symmetry is a binary log ratio of zero. An image of the histogram can be downloaded in either PNG or PDF format.
 
 ##6. Volcano Plot
 
 <img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/volcano_plot_tab.PNG" width="550" alt="Start screen">
+
+This plot shows statistical significance (-log10(p-value)) of G-tests for asymmetry of parasite distributions in individual hosts *vs* fold difference (binary log ratio) in parasite abundance between right and left. Each point in the scatterplot represents the parasite distribution in an individual host. The dashed horizontal line represents the chosen p-value threshold. Parasite distributions deviating significantly from symmetry are shown as red squares, whereas those not differing signicantly from a 1:1 ratio are represented by blue circles. Changing the **Multiple Test Correction** and or **Significance level** in the control panel will update the plot.
 
 

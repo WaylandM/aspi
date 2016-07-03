@@ -1,6 +1,6 @@
 #ASPI Graphical User Interface (GUI)
 
-This is a guide to using the web application. Data analysis is explained in more detail on the following page: [Interpretation of statistical tests](https://github.com/WaylandM/aspi/blob/master/doc/statistical_tests_interpretation.md).
+This is a guide to using the web application. 
 
 ##1. Read data
 

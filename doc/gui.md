@@ -45,6 +45,10 @@ Reference:
 Benjamini, Y., Hochberg, Y. (1995) Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society B 57: 289-300.
 
 ####2.2.2 Familywise error rate (FWER)
+The FWER is the probability of a single false positive among a collection (family) of hypothesis tests. Holm's procedure is used to control the FWER.
+
+Reference:
+Holm, S. (1979) A simple sequentially rejective multiple test procedure. Scandinavian Journal of Statistics 6, 65–70
 
 ##3. Results Summary
 

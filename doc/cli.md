@@ -4,7 +4,7 @@
 The script [aspi.R](https://github.com/WaylandM/aspi/blob/master/cli/aspi.R) provides five functions: **removeUninfected**, **g.test**, **eb.test**, **plot.Histogram** and **plot.Volcano**.
 
 
-####removeUninfected
+###removeUninfected
 **removeUninfected** takes as its argument a matrix or data.frame containing exactly two columns: 
 
 left: counts of parasites on the left side of the host

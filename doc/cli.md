@@ -13,7 +13,7 @@ right: counts of parasites on the right side of the host
 
 It returns the matrix or data.frame after removing uninfected hosts (i.e. those with zero counts for both left and right sides).
 
-####g.test
+###g.test
 This function implements Sokal & Rohlf's (1995) replicated G-tests of goodness-of-fit for the specific case of an expected 1:1 ratio.
 
 Reference R.R. Sokal & F.J. Rohlf (1995) Biometry. 3rd Edition. New York: W.H. Freeman and Company. 887 pp.
@@ -26,7 +26,7 @@ It returns a list containing two data.frames:
 
 **hosts** - results (G-statistic, raw p-value, FDR corrected p-value, FWER corrected p-value) of individual G-tests on distribution of parasites in each host.
 
-####eb.test
+###eb.test
 This function performs a binomial exact test with the null hypothesis of a 1:1 ratio. It takes as its argument a matrix or data frame with two numeric columns; first column is for left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names.
 
 It returns a list containing two elements:
@@ -35,7 +35,7 @@ It returns a list containing two elements:
 
 **hosts** - data.frame of results of binomial exact tests performed on the distribution of parasites in each host
 
-####plot.Histogram
+###plot.Histogram
 **plot.Histogram** creates a histogram showing distribution of fold differences in abundance of parasites between left and right sides. For each host the number of parasites on the right side is divided by the number of parasites on the left side, and the result binary log transformed. The log2 ratio will be negative if there are more parasites on the left than right and positive if there are more parasites on the right than left. A log2 ratio of one corresponds to a one-fold difference, i.e. double the number of parasites. Perfect symmetry is a log2 ratio of zero.
 
 This function takes the following arguments:
@@ -43,7 +43,7 @@ This function takes the following arguments:
 * **nBreaks** - a single number giving the number of cells for the histogram.
 * **...** - optionally, additional arguments can be passed, such as graphical parameters.
 
-####plot.Volcano
+###plot.Volcano
 **plot.Volcano** creates a volcano plot, *i.e.* a scatterplot of statistical significance (-log10(p-value)) *vs* fold difference (log2 ratio - as calculated for the histogram above) in parasite abundance between left and right. Each point in the scatterplot represents the parasite distribution in an individual host. A dashed horizontal line represents the user-defined p-value threshold for significance. If a parasite distribution deviates significantly from symmetry it is shown as a red square, otherwise as a blue circle.
 
 **plot.Volcano** takes the following arguments:

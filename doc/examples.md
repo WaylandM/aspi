@@ -50,7 +50,24 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 
 
 ##Left bias with left:right ratio varying between hosts
+###Data
 Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_heterogeneous_proportions.csv)
+
+|Host Accession Number 	|left 	|right|
+|-----------------------|-------|-----|
+|1 	|165 	53|
+|2 	|235 	126|
+|3 	|203 	128|
+|4 	|219 	101|
+|5 	|246 	144|
+|6 	|233 	110|
+|7 	|189 	52|
+|8 	|193 	84|
+|9 	|170 	97|
+|10 	|199 	91|
+
+###Results
+
 
 ##Left bias with left:right ratio similar in all hosts
 Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_homogeneous_proportions.csv)

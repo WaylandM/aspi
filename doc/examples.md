@@ -11,7 +11,7 @@ Here are examples of the results ASPI returns under different scenarios. Simulat
 Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_symmetrical_infection.csv)
 
 |Host Accession Number 	|left 	|right|
---------------------------------------
+|-----------------------|-------|-----|
 |1 	|86 	|89|
 |2 	|96 	|112|
 |3 	|92 	|88|

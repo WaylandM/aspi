@@ -10,5 +10,5 @@ As a guide to how the results
 ##Left bias with left:right ratio similar in all hosts
 
 
-#Asymmetry with inconsistent bias
+##Asymmetry with inconsistent bias
 

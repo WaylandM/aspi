@@ -2,7 +2,7 @@
 
 Here are examples of the results ASPI returns under different scenarios. Simulated data sets have been generated for parasitic infections showing: 
 
-1. symmetry 
+1. (symmetry)[##Symmetry] 
 2. left bias with the left:right ratio varying between hosts
 3. left bias with left:right ratio similar in all hosts
 4. asymmetry with inconsistent bias (left bias in some hosts and right in others)
@@ -135,5 +135,18 @@ Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://g
 ###Data
 Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_asymmetry_inconsistent_bias.csv)
 
+|Host Accession Number 	|left 	|right|
+|1 	|105 	|117|
+|2 	|200 	|142|
+|3 	|195 	|74|
+|4 	|172 	|182|
+|5 	|88 	|84|
+|6 	|194 	|140|
+|7 	|199 	|166|
+|8 	|106 	|75|
+|9 	|157 	|187|
+|10 	|178 	|108|
+
 ###Results
+
 

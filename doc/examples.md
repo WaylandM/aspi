@@ -4,7 +4,7 @@ Here are examples of the results ASPI returns under different scenarios. Simulat
 
 1. [symmetry](#symmetry) 
 2. [left bias with the left:right ratio varying between hosts](#left-bias-heterogeneous)
-3. [left bias with left:right ratio similar in all hosts](#left-bias-with-left:right-ratio-similar-in-all-hosts)
+3. [left bias with left:right ratio similar in all hosts](#left-bias-homogeneous)
 4. [asymmetry with inconsistent bias left bias in some hosts and right in others](#asymmetry-with-inconsistent-bias)
 
 ##Symmetry
@@ -91,7 +91,7 @@ Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https:/
 
 
 
-##Left bias with left:right ratio similar in all hosts
+##Left bias with left:right ratio similar in all hosts<a id="left-bias-homogeneous"></a>
 ###Data
 Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_homogeneous_proportions.csv)
 

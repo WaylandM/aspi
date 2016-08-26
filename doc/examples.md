@@ -8,7 +8,7 @@ Here are examples of the results ASPI returns under different scenarios. Simulat
 4. asymmetry with inconsistent bias (left bias in some hosts and right in others)
 
 ##Symmetry
-Data: [R](http://www.r-project.org/)
+Data: [simulated_symmetrical_infection.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_symmetrical_infection.csv)
 
 ##Left bias with left:right ratio varying between hosts
 

@@ -30,6 +30,7 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 |Heterogeneity	 |9	 |14.3881049875038	 |0.109173866154248|
 |Total	 |10	 |15.371926797939	 |0.119078939601796|
 
+
 ##Left bias with left:right ratio varying between hosts
 Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_heterogeneous_proportions.csv)
 

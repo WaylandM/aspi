@@ -11,11 +11,11 @@ Here are examples of the results ASPI returns under different scenarios. Simulat
 Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_symmetrical_infection.csv)
 
 ##Left bias with left:right ratio varying between hosts
-Simulated data file: []()
+Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_heterogeneous_proportions.csv)
 
 ##Left bias with left:right ratio similar in all hosts
-Simulated data file: []()
+Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_homogeneous_proportions.csv)
 
 ##Asymmetry with inconsistent bias
-Simulated data file: []()
+Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_asymmetry_inconsistent_bias.csv)
 

@@ -8,6 +8,7 @@ Here are examples of the results ASPI returns under different scenarios. Simulat
 4. asymmetry with inconsistent bias (left bias in some hosts and right in others)
 
 ##Symmetry
+###Data
 Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_symmetrical_infection.csv)
 
 |Host Accession Number 	|left 	|right|
@@ -23,7 +24,7 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 |9 	|81 	|118|
 |10 	|84 	|102|
 
-
+###Results
 
 |Test	 |df	 |G	 |p   |
 |------|-----|---|----|

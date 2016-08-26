@@ -92,8 +92,27 @@ Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https:/
 
 
 ##Left bias with left:right ratio similar in all hosts
+###Data
 Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_homogeneous_proportions.csv)
 
+|Host |Accession |Number 	|left 	|right|
+|-----|----------|--------|-------|-----|
+|1 	|183 	|84|
+|2 	|175 	|86|
+|3 	|133 	|68|
+|4 	|83 	|36|
+|5 	|100 	|42|
+|6 	|69 	|34|
+|7 	|111 	|49|
+|8 	|163 	|77|
+|9 	|138 	|81|
+|10 	|157 	|85|
+
+###Results
+
 ##Asymmetry with inconsistent bias
+###Data
 Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_asymmetry_inconsistent_bias.csv)
+
+###Results
 

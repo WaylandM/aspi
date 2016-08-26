@@ -95,8 +95,8 @@ Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https:/
 ###Data
 Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_homogeneous_proportions.csv)
 
-|Host |Accession |Number 	|left 	|right|
-|-----|----------|--------|-------|-----|
+|Host Accession Number 	|left 	|right|
+|-----------------------|-------|-----|
 |1 	|183 	|84|
 |2 	|175 	|86|
 |3 	|133 	|68|

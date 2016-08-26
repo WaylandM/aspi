@@ -24,8 +24,8 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 |10 	|84 	|102|
 
 
-|Test	 |df	 |G	 |p |
-|------|-----|---|--|
+|Test	 |df	 |G	 |p|
+|------|-----|---|-|
 |Pooled	 |1	 |0.983821810435273	 |0.321257080666917|
 |Heterogeneity	 |9	 |14.3881049875038	 |0.109173866154248|
 |Total	 |10	 |15.371926797939	 |0.119078939601796|

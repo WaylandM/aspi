@@ -78,6 +78,11 @@ In this example there are more parasites on the left than the right in every hos
 |Heterogeneity	 |9	 |33.7113460367219	 |0.000100347129240852|
 |Total	 |10	 |415.839418158072	 |3.99378016012777e-83|
 
+Pooled, heterogeneity and total G-test statistics are all highly significant (p<0.001). 
+
+* A significant total G-test indicates that overall the parasite distributions deviate from symmetry in some way. 
+* A significant pooled G-test shows that the parasites occur in larger numbers on one side of the host.
+* A significant heterogeneity G-test reveals that the proportion of parasites found on the left and right sides, varies from host to host.
 
 
 |Host	|Left	|Right	|G	|p	|BH	|Holm|
@@ -93,7 +98,7 @@ In this example there are more parasites on the left than the right in every hos
 |9	|170	|97	|20.2152092600228	|0.00000692005577265575	|0.00000768895085850639	|0.0000138401115453115|
 |10	|199	|91	|41.2061798224816	|1.36988747717129e-10	|2.28314579528549e-10	|6.84943738585646e-10|
 
-
+Individual G-tests demonstrate a highly significant (FDR corrected p-value < 0.00001) difference between the numbers of parasites found on the left and right sides.
 
 ##Left bias with left:right ratio similar in all hosts<a id="left-bias-homogeneous"></a>
 ###Data

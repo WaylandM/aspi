@@ -24,6 +24,8 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 |9 	|98 	|108|
 |10 	|84 	|102|
 
+Similar numbers of parasites on each side.
+
 ###Results
 
 |Test 	|df 	|G 	|p |
@@ -31,6 +33,8 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 |Pooled 	|1 	|0.146330920915123 	|0.70206661375943|
 |Heterogeneity 	|9 	|8.79163155133531 	|0.456726682229064|
 |Total 	|10 	|8.93796247225043 	|0.538001144071982|
+
+Pooled, heterogeneity and total G-test statistics are not significant (p < 0.05).
 
 |Host	|Left	|Right	|G	|p	|BH	|Holm|
 |-----|-----|-------|---|---|---|----|
@@ -45,6 +49,7 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 |9	|98	|108	|0.485627727653613	|0.485884184917137	|0.809806974861896	|1|
 |10	|84	|102	|1.74466466265676	|0.186548866887074	|0.569938254627077	|1|
 
+Individual G-tests show that parasite distributions do not differ from symmetry in any of the 10 hosts.
 
 ##Left bias with left:right ratio varying between hosts<a id="left-bias-heterogeneous"></a>
 ###Data
@@ -62,6 +67,8 @@ Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https:/
 |8 	|193 	|84|
 |9 	|170 	|97|
 |10 	|199 	|91|
+
+In this example there are more parasites on the left than the right in every host. Furthermore, the proportion of parasites on the left and right sides varies betweeen hosts. For example, in host *1* there are three times as many parasites on the left than on the right, whereas in host *3* the ratio is approximately 1.6:1.
 
 ###Results
 

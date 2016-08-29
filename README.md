@@ -15,3 +15,5 @@ You can also [run the web application on your own computer](https://github.com/W
 [Running the web application on your own computer](https://github.com/WaylandM/aspi/blob/master/doc/running_locally.md)
 
 [Using the command line interface](https://github.com/WaylandM/aspi/blob/master/doc/cli.md)
+
+[Example analyses showing interpretation of test results](https://github.com/WaylandM/aspi/blob/master/doc/examples.md)

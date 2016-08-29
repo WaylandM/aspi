@@ -27,7 +27,7 @@ Replicated G-tests of goodness-of-fit (Sokal and Rohlf, 1995) are the default me
 * **Heterogeneity G** - examines the null hypothesis that the left:right ratios are the same in all individual hosts. 
 * **Individual G** - used to identify which individual hosts have asymmetrical parasite distributions.
 
-Further guidance on interpreting the reults of replicated G-tests of goodness-of-fit can be found in these [examples](https://github.com/WaylandM/aspi/blob/master/doc/examples.md).
+Further guidance on the interpretation of the results of replicated G-tests of goodness-of-fit is provided by these [examples](https://github.com/WaylandM/aspi/blob/master/doc/examples.md).
 
 Reference: 
 R.R. Sokal & F.J. Rohlf (1995) Biometry. 3rd Edition. New York: W.H. Freeman and Company. 887 pp.

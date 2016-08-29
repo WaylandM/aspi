@@ -164,6 +164,8 @@ Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.
 |9 	|157 	|187|
 |10 	|178 	|108|
 
+In this example some hosts have many more parasites on the left than right, whereas others have more on the right than left.
+
 ###Results
 
 |Test 	|df 	|G 	|p|
@@ -171,6 +173,11 @@ Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.
 |Pooled 	|1 	|0.0784248954615663 	|0.779443400466083|
 |Heterogeneity 	|9 	|104.280018014651 	|2.13746167861965e-18|
 |Total 	|10 	|104.358442910113 	|7.28706563795127e-18|
+
+The hetereogeneity and total G-test statistics are both highly significant, but the pooled G-test is not significant at an alpha of 0.05. 
+* A significant total G-test statistic indicates that overall the parasite distributions deviate from symmetry in some way.
+* A non-significant pooled G-test shows there is no evidence of bias towards one side.
+* A significant heterogeneity G-test reveals that the proportion of parasites on the left and right sides varies from host to host.
 
 |Host	|Left	|Right	|G	|p	|BH	|Holm|
 |-----|-----|-------|---|---|---|----|
@@ -184,3 +191,5 @@ Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.
 |8	|75	|106	|5.33565902667606	|0.0208934391588535	|0.041786878317707	|0.125360634953121|
 |9	|157	|187	|2.6196055353284	|0.10555067699548	|0.150786681422114	|0.422202707981918|
 |10	|178	|108	|17.3081604541468	|0.0000317819069131459	|0.00015890953456573	|0.000286037162218313|
+
+If we choose an FDR (Benjamini and Hochberg) corrected p-value of 0.05 as our significance threshold, we find five of ten hosts have asymmetric distributions of parasites. Of these five, three show a left bias and two a right bias. This is an example of inconsistent bias.

@@ -68,7 +68,7 @@ Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https:/
 |9 	|170 	|97|
 |10 	|199 	|91|
 
-In this example there are more parasites on the left than the right in every host. Furthermore, the proportion of parasites on the left and right sides varies betweeen hosts. For example, in host *1* there are three times as many parasites on the left than on the right, whereas in host *3* the ratio is approximately 1.6:1.
+In this example there are more parasites on the left than the right in every host. Furthermore, the proportion of parasites on the left and right sides varies betweeen hosts. For example, in host **1** there are three times as many parasites on the left than on the right, whereas in host **3** the ratio is approximately 1.6:1.
 
 ###Results
 

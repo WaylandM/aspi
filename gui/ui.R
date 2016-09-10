@@ -31,7 +31,7 @@ shinyUI(fluidPage(
 
   # Application title
   titlePanel("ASPI"),
-  h4("Analysis of Symmetry of Parasitic Infections"),
+  h4("Analysis of Symmetry of Parasitic Infections (version 0.1)"),
   
   # Sidebar with a slider input for number of bins
   sidebarLayout(

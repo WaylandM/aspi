@@ -3,7 +3,7 @@ ASPI is a tool for the detection and visualization of asymmetry in parasitic inf
 
 A free web application is available:
 
-[https://wayland.shinyapps.io/ASPI](https://wayland.shinyapps.io/ASPI)
+[https://wayland.shinyapps.io/aspi](https://wayland.shinyapps.io/aspi)
 
 You can also [run the web application on your own computer](https://github.com/WaylandM/aspi/blob/master/doc/running_locally.md) or [call ASPIs functions from the command line](https://github.com/WaylandM/aspi/blob/master/doc/cli.md).
 

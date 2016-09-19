@@ -1,0 +1,17 @@
+{
+    "contents" : "##################################################################################\n#                                                                                #\n#  Analysis of Symmetry of Parasitic Infections (ASPI)                           #\n#                                                                                #\n#  Version 0.2                                                                   #\n#                                                                                #\n#  Copyright (C) 2016 Matthew Thomas Wayland                                     #\n#                                                                                #\n#  This file is part of Analysis of Symmetry of Parasitic Infections.            #\n#                                                                                #\n#  Analysis of Symmetry of Parasitic Infections is free software: you can        #\n#  redistribute it and/or modify it under the terms of the GNU General Public    #\n#  License as published by the Free Software Foundation, either version 3 of     #\n#  the License, or (at your option) any later version.                           #\n#                                                                                #\n#  Analysis of Symmetry of Parasitic Infections is distributed in the hope that  #\n#  it will be useful, but WITHOUT ANY WARRANTY; without even the implied         #\n#  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the     #\n#  GNU General Public License for more details.                                  #\n#                                                                                #\n#  You should have received a copy of the GNU General Public License along       #\n#  with Analysis of Symmetry of Parasitic Infections.                            #\n#  If not, see <http://www.gnu.org/licenses/>.                                   #\n#                                                                                #\n#                                                                                #\n##################################################################################\n\n#' ASPI: Analysis of Symmetry in Parasitic Infections\n#'\n#' Tools for the analysis and visualization of bilateral asymmetry in\n#' parasitic infections.\n#' \n#' @section Functions:\n#' \\itemize{\n#' \\item{\\code{g.test}}\n#' \\item{\\code{eb.test}}\n#' \\item{\\code{plotHistogram}}\n#' \\item{\\code{plotVolcano}}\n#' }\n#' \n#' @section Data:\n#' \\itemize{\n#' \\item{\\code{diplostomum_eyes_excl_lenses}}\n#' \\item{\\code{diplostomum_lenses}}\n#' \\item{\\code{simulated_symmetrical_infection}}\n#' \\item{\\code{simulated_left_bias_homogeneous_proportions}}\n#' \\item{\\code{simulated_left_bias_heterogeneous_proportions}}\n#' \\item{\\code{simulated_asymmetry_inconsistent_bias}}\n#' }\n#'\n#' @author Matt Wayland, \\email{mw283@cam.ac.uk}\n#'\n#' @docType package\n#' @name aspi\nNULL",
+    "created" : 1473539101014.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "738978294",
+    "id" : "4BDAD478",
+    "lastKnownWriteTime" : 1474115658,
+    "path" : "~/Dropbox/bilateral_asymmetry/bilateral_asymmetry_analysis/pkg/aspi/R/aspi.R",
+    "project_path" : "R/aspi.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

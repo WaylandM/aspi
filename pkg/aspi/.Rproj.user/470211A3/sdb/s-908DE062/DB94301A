@@ -1,0 +1,18 @@
+{
+    "contents" : "#aspi - Analysis of Symmetry of Parasitic Infections\nTools for the analysis and visualization of bilateral asymmetry in parasitic infections. \n\n##Example data\n###Observed parasite distributions\n```R\ndiplostomum_eyes_excl_lenses\ndiplostomum_lenses\n```\n\n###Simulated parasite distributions\n```R\nsimulated_asymmetry_inconsistent_bias\nsimulated_left_bias_heterogeneous_proportions\nsimulated_left_bias_homogeneous_proportions\nsimulated_symmetrical_infection\n```\n\n##Examples of usage\n###Replicated g-tests of goodness of fit\n```R\ng.test(diplostomum_eyes_excl_lenses)\n```\n\n###Exact binomial tests\n```R\neb.test(diplostomum_lenses)\n```\n\n###Histogram\n```R\nplotHistogram(diplostomum_eyes_excl_lenses)\n```\n\n###Volcano plot\n```R\nplotVolcano(diplostomum_eyes_excl_lenses)\n```\n",
+    "created" : 1474280650020.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "731399252",
+    "id" : "DB94301A",
+    "lastKnownWriteTime" : 1474282368,
+    "path" : "~/Dropbox/bilateral_asymmetry/bilateral_asymmetry_analysis/pkg/aspi/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "type" : "markdown"
+}

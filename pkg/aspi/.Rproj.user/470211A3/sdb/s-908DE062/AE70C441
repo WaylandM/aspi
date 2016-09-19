@@ -1,0 +1,18 @@
+{
+    "contents" : "# aspi 0.2\n* first release to CRAN\n",
+    "created" : 1474280675591.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4004913527",
+    "id" : "AE70C441",
+    "lastKnownWriteTime" : 1474280759,
+    "path" : "~/Dropbox/bilateral_asymmetry/bilateral_asymmetry_analysis/pkg/aspi/NEWS.md",
+    "project_path" : "NEWS.md",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "type" : "markdown"
+}

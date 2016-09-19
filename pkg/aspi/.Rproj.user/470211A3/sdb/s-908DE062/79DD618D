@@ -1,0 +1,17 @@
+{
+    "contents" : "test_that(\"g.test throws expected error when fed data containing zero counts\",{\n  expect_error(g.test(diplostomum_lenses),\"Data contains zero counts!\")\n})\n\nresult <- g.test(diplostomum_eyes_excl_lenses)\n\ntest_that(\"g.test summary reports results of three tests\",{\n  expect_equal(length(result$summary$Test), 3)\n  expect_equal(length(names(result$summary)), 4)\n  expect_match(as.character(result$summary$Test[1]), \"Pooled\")\n  expect_match(as.character(result$summary$Test[2]), \"Heterogeneity\")\n  expect_match(as.character(result$summary$Test[3]), \"Total\")\n})\n\ntest_that(\"Total df equals sum of Pooled and Heterogeneity df\",{\n  expect_equal(result$summary$df[1] + result$summary$df[2], result$summary$df[3])\n})\n\ntest_that(\"Total G equals sum of Pooled and Hetereogeneity G\",{\n  expect_equal(result$summary$G[1] + result$summary$G[2], result$summary$G[3])\n})\n\ntest_that(\"Results are correct for host 3\", {\n  expect_match(as.character(result$hosts$Host[3]), \"3\")\n  expect_equal(result$hosts$Left[3], 195)\n  expect_equal(result$hosts$Right[3], 133)\n  expect_equal(result$hosts$G[3], 11.790, tolerance=0.001)\n  expect_equal(result$hosts$p[3], 0.0006, tolerance=0.0001)\n  expect_equal(result$hosts$BH[3], 0.0033, tolerance=0.0001)\n  expect_equal(result$hosts$Holm[3], 0.0250, tolerance=0.0001)\n})",
+    "created" : 1474282472057.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3700457048",
+    "id" : "79DD618D",
+    "lastKnownWriteTime" : 1474234517,
+    "path" : "~/Dropbox/bilateral_asymmetry/bilateral_asymmetry_analysis/pkg/aspi/tests/testthat/test_g.test.R",
+    "project_path" : "tests/testthat/test_g.test.R",
+    "properties" : {
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

@@ -33,7 +33,7 @@ G-tests involve logarithmic transformation and so cannot be applied to counts of
 Data for analysis should be in a matrix of data.frame with two numeric columns. Each row represents one host. The first column is the number of parasites recorded from the left-side of the host and the 2nd column is the number of parasites recorded from the right-side. Identifiers for hosts can be provided as row names.
 
 ```r
-library(aspi)
+devtools::load_all()
 simulated_symmetrical_infection
 ```
 

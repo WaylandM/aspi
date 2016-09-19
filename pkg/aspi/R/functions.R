@@ -25,6 +25,9 @@
 #                                                                                #
 ##################################################################################
 
+#'@importFrom graphics abline hist plot
+#'@importFrom stats binom.test p.adjust pchisq
+
 # check data format and remove uninfected hosts
 .prepareData <- function(x){
   x <- as.data.frame(x)
@@ -43,13 +46,13 @@
 
 #'Replicated G-tests of goodness-of-fit
 #'@description Perform replicated G-tests of goodness-of-fit to assess symmetry of parasitic infections.
-#'@param x a matrix or data frame with two numeric columns; 
-#'first column is for left-side and 2nd column for right-side. 
+#'@param x a matrix or data frame with two numeric columns;
+#'first column is for left-side and 2nd column for right-side.
 #'Identifiers for hosts can be provided as row names.
 #'@details
 #'This function implements Sokal & Rohlf's (1995) G-test for the specific case of an expected 1:1 ratio
 #'The function takes as its argument a matrix or data frame with two numeric columns; first column is for
-#'left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected 
+#'left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected
 #' hosts (zero count for both left and right sides) are ignored. Cannot be applied to data containing zero
 #' counts; use eb.test instead.
 
@@ -58,9 +61,9 @@
 #'  \item{summary}{results of total, heterogeneity and pooled G-tests.
 #'    Data frame has four columns: test, degrees of freedom, G-statistic and p-value.}
 #'  \item{hosts}{results of individual G-tests on distribution of parasites in each host.
-#'    Data frame has seven columns: Host (ID), Left (count of parasites on left side), 
+#'    Data frame has seven columns: Host (ID), Left (count of parasites on left side),
 #'    Right (count of parasites on right side), G (G-statistic), p (p-value), BH (p-value adjusted
-#'    using Benjamini and Hochberg's procedure for controlling the false discovery rate) and Holm (p-value 
+#'    using Benjamini and Hochberg's procedure for controlling the false discovery rate) and Holm (p-value
 #'    adjusted using Holm's method).}
 #'@references
 #'R.R. Sokal & F.J. Rohlf (1995) Biometry. 3rd Edition. New York: W.H. Freeman and Company. 887 pp.
@@ -125,20 +128,20 @@ g.test <- function(x){
 #'Exact binomial tests
 #'@description Assess symmetry of parasitic infections by performing exact binomial tests on pooled data and
 #'individual hosts.
-#'@param x a matrix or data frame with two numeric columns; 
-#'first column is for left-side and 2nd column for right-side. 
+#'@param x a matrix or data frame with two numeric columns;
+#'first column is for left-side and 2nd column for right-side.
 #'Identifiers for hosts can be provided as row names.
 #'@details
-#'This function performs a binomial exact tests with the null hypothesis of a 1:1 ratio. It takes 
-#' as its argument a matrix or data frame with two numeric columns; first column is for left-side 
-#' and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected 
+#'This function performs a binomial exact tests with the null hypothesis of a 1:1 ratio. It takes
+#' as its argument a matrix or data frame with two numeric columns; first column is for left-side
+#' and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected
 #' hosts (zero count for both left and right sides) are ignored.
 
 #'@return
 #'It returns a list containing two elements:
-#'  \item{pooled}{p-value for pooled binomial exact test (null hypothesis: the ratio of the total 
+#'  \item{pooled}{p-value for pooled binomial exact test (null hypothesis: the ratio of the total
 #'  number of parasites from each side doesn't differ from 1:1).}
-#'  \item{hosts}{data.frame of results of binomial exact tests performed on the distribution of 
+#'  \item{hosts}{data.frame of results of binomial exact tests performed on the distribution of
 #'  parasites in each host.}
 #'
 #'@examples
@@ -180,8 +183,8 @@ eb.test <- function(x){
 #'Plot histogram
 #'@description Creates a histogram showing distribution of fold differences
 #'in abundance of parasites between left and right sides of host.
-#'@param x a matrix or data frame with two numeric columns; 
-#'first column is for left-side and 2nd column for right-side. 
+#'@param x a matrix or data frame with two numeric columns;
+#'first column is for left-side and 2nd column for right-side.
 #'Identifiers for hosts can be provided as row names.
 #'@param nBreaks number of cells for the histogram. A suggestion
 #'only; breakpoints will be set to pretty values.
@@ -189,18 +192,19 @@ eb.test <- function(x){
 #'passed to plot.
 #'
 #'@details
-#' plot.Histogram creates a histogram showing distribution of fold differences 
-#' in abundance of parasites between left and right sides. For each infected host the 
-#' number of parasites on the right side is divided by the number of parasites 
-#' on the left side, and the result binary log transformed. The log2 ratio will 
-#' be negative if there are more parasites on the left than right and positive 
-#' if there are more parasites on the right than left. A log2 ratio of one 
-#' corresponds to a one-fold difference, i.e. double the number of parasites. 
+#' plot.Histogram creates a histogram showing distribution of fold differences
+#' in abundance of parasites between left and right sides. For each infected host the
+#' number of parasites on the right side is divided by the number of parasites
+#' on the left side, and the result binary log transformed. The log2 ratio will
+#' be negative if there are more parasites on the left than right and positive
+#' if there are more parasites on the right than left. A log2 ratio of one
+#' corresponds to a one-fold difference, i.e. double the number of parasites.
 #' Perfect symmetry is a log2 ratio of zero.
 #'
 #'@examples
 #'plotHistogram(diplostomum_eyes_excl_lenses)
-#'plotHistogram(diplostomum_eyes_excl_lenses,nBreaks=20,main="Diplostomum metacercariae in eyes of ruffe")
+#'plotHistogram(diplostomum_eyes_excl_lenses,nBreaks=20,
+#'main="Diplostomum metacercariae in eyes of ruffe")
 #'@export
 plotHistogram <- function(x, nBreaks=10, ...){
   # prepare data
@@ -217,25 +221,26 @@ plotHistogram <- function(x, nBreaks=10, ...){
 }
 
 #'Volcano plot
-#'@description Produces scatterplot of statistical significance vs fold difference in parasite abundance 
+#'@description Produces scatterplot of statistical significance vs fold difference in parasite abundance
 #'between left and right.
-#'@param x a matrix or data frame with two numeric columns; first column is for left-side and 2nd column 
+#'@param x a matrix or data frame with two numeric columns; first column is for left-side and 2nd column
 #'for right-side. Identifiers for hosts can be provided as row names.
 #'@param test if set to "G" (default) a G-test is performed; otherwise an exact binomial test is performed.
-#'@param pAdj method for correcting p-values for multiple comparisons. If set to "BH" (default), Benjamini 
-#'& Hochberg's procedure is used to control the false discovery rate (FDR); otherwise Holm's methos is used 
+#'@param pAdj method for correcting p-values for multiple comparisons. If set to "BH" (default), Benjamini
+#'& Hochberg's procedure is used to control the false discovery rate (FDR); otherwise Holm's methos is used
 #'to control the familywise error rate (FWER).
 #'@param sigThresh significance threshold (defaults to 0.05); p-values below this value will be called significant.
 #'@param ... optional further arguments and graphical parameters passed to plot.
-#'@details plot.Volcano creates a volcano plot, i.e. a scatterplot of statistical significance 
-#'(-log10(p-value)) vs fold difference (log2 ratio - as calculated for the histogram above) 
-#'in parasite abundance between left and right. Each point in the scatterplot represents the 
-#'parasite distribution in an individual host. A dashed horizontal line represents the user-defined 
-#'p-value threshold for significance. If a parasite distribution deviates significantly from symmetry 
+#'@details plot.Volcano creates a volcano plot, i.e. a scatterplot of statistical significance
+#'(-log10(p-value)) vs fold difference (log2 ratio - as calculated for the histogram above)
+#'in parasite abundance between left and right. Each point in the scatterplot represents the
+#'parasite distribution in an individual host. A dashed horizontal line represents the user-defined
+#'p-value threshold for significance. If a parasite distribution deviates significantly from symmetry
 #'it is shown as a red square, otherwise as a blue circle.
 #'@examples
 #'plotVolcano(diplostomum_eyes_excl_lenses)
-#'plotVolcano(diplostomum_eyes_excl_lenses, test="G", pAdj="EB", sigThresh=0.1, main="Diplostomum metacercariae in eyes of ruffe")
+#'plotVolcano(diplostomum_eyes_excl_lenses, test="G", pAdj="EB", sigThresh=0.1,
+#'main="Diplostomum metacercariae in eyes of ruffe")
 #'@export
 plotVolcano <- function(x, test="G", pAdj="BH", sigThresh=0.05, ...){
   # prepare data

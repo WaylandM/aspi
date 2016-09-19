@@ -7,8 +7,8 @@
 plotHistogram(x, nBreaks = 10, ...)
 }
 \arguments{
-\item{x}{a matrix or data frame with two numeric columns; 
-first column is for left-side and 2nd column for right-side. 
+\item{x}{a matrix or data frame with two numeric columns;
+first column is for left-side and 2nd column for right-side.
 Identifiers for hosts can be provided as row names.}
 
 \item{nBreaks}{number of cells for the histogram. A suggestion
@@ -22,17 +22,18 @@ Creates a histogram showing distribution of fold differences
 in abundance of parasites between left and right sides of host.
 }
 \details{
-plot.Histogram creates a histogram showing distribution of fold differences 
-in abundance of parasites between left and right sides. For each infected host the 
-number of parasites on the right side is divided by the number of parasites 
-on the left side, and the result binary log transformed. The log2 ratio will 
-be negative if there are more parasites on the left than right and positive 
-if there are more parasites on the right than left. A log2 ratio of one 
-corresponds to a one-fold difference, i.e. double the number of parasites. 
+plot.Histogram creates a histogram showing distribution of fold differences
+in abundance of parasites between left and right sides. For each infected host the
+number of parasites on the right side is divided by the number of parasites
+on the left side, and the result binary log transformed. The log2 ratio will
+be negative if there are more parasites on the left than right and positive
+if there are more parasites on the right than left. A log2 ratio of one
+corresponds to a one-fold difference, i.e. double the number of parasites.
 Perfect symmetry is a log2 ratio of zero.
 }
 \examples{
 plotHistogram(diplostomum_eyes_excl_lenses)
-plotHistogram(diplostomum_eyes_excl_lenses,nBreaks=20,main="Diplostomum metacercariae in eyes of ruffe")
+plotHistogram(diplostomum_eyes_excl_lenses,nBreaks=20,
+main="Diplostomum metacercariae in eyes of ruffe")
 }
 

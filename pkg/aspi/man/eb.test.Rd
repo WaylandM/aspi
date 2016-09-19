@@ -7,15 +7,15 @@
 eb.test(x)
 }
 \arguments{
-\item{x}{a matrix or data frame with two numeric columns; 
-first column is for left-side and 2nd column for right-side. 
+\item{x}{a matrix or data frame with two numeric columns;
+first column is for left-side and 2nd column for right-side.
 Identifiers for hosts can be provided as row names.}
 }
 \value{
 It returns a list containing two elements:
- \item{pooled}{p-value for pooled binomial exact test (null hypothesis: the ratio of the total 
+ \item{pooled}{p-value for pooled binomial exact test (null hypothesis: the ratio of the total
  number of parasites from each side doesn't differ from 1:1).}
- \item{hosts}{data.frame of results of binomial exact tests performed on the distribution of 
+ \item{hosts}{data.frame of results of binomial exact tests performed on the distribution of
  parasites in each host.}
 }
 \description{
@@ -23,9 +23,9 @@ Assess symmetry of parasitic infections by performing exact binomial tests on po
 individual hosts.
 }
 \details{
-This function performs a binomial exact tests with the null hypothesis of a 1:1 ratio. It takes 
-as its argument a matrix or data frame with two numeric columns; first column is for left-side 
-and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected 
+This function performs a binomial exact tests with the null hypothesis of a 1:1 ratio. It takes
+as its argument a matrix or data frame with two numeric columns; first column is for left-side
+and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected
 hosts (zero count for both left and right sides) are ignored.
 }
 \examples{

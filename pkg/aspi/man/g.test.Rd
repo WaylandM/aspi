@@ -7,8 +7,8 @@
 g.test(x)
 }
 \arguments{
-\item{x}{a matrix or data frame with two numeric columns; 
-first column is for left-side and 2nd column for right-side. 
+\item{x}{a matrix or data frame with two numeric columns;
+first column is for left-side and 2nd column for right-side.
 Identifiers for hosts can be provided as row names.}
 }
 \value{
@@ -16,9 +16,9 @@ A list containing two data.frames:
  \item{summary}{results of total, heterogeneity and pooled G-tests.
    Data frame has four columns: test, degrees of freedom, G-statistic and p-value.}
  \item{hosts}{results of individual G-tests on distribution of parasites in each host.
-   Data frame has seven columns: Host (ID), Left (count of parasites on left side), 
+   Data frame has seven columns: Host (ID), Left (count of parasites on left side),
    Right (count of parasites on right side), G (G-statistic), p (p-value), BH (p-value adjusted
-   using Benjamini and Hochberg's procedure for controlling the false discovery rate) and Holm (p-value 
+   using Benjamini and Hochberg's procedure for controlling the false discovery rate) and Holm (p-value
    adjusted using Holm's method).}
 }
 \description{
@@ -27,7 +27,7 @@ Perform replicated G-tests of goodness-of-fit to assess symmetry of parasitic in
 \details{
 This function implements Sokal & Rohlf's (1995) G-test for the specific case of an expected 1:1 ratio
 The function takes as its argument a matrix or data frame with two numeric columns; first column is for
-left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected 
+left-side and 2nd column for right-side. Identifiers for hosts can be provided as row names. Uninfected
 hosts (zero count for both left and right sides) are ignored. Cannot be applied to data containing zero
 counts; use eb.test instead.
 }

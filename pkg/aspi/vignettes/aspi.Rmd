@@ -11,12 +11,18 @@ vignette: >
 ---
 
 ## Introduction
-When parasites invade paired structures of their host non-randomly, the resulting asymmetry may have both pathological and ecological significance. ASPI has been developed to facilitate the detection and visualization of asymmetric infections. ASPI can detect both consistent bias towards one side, and inconsistent bias in which the left side is favored in some hosts and the right in others. In this vignette ASPI is demonstrated on both observed and simulated parasite distributions.
+When parasites invade paired structures of their host non-randomly, the resulting asymmetry may have both pathological and ecological significance. ASPI has been developed to facilitate the detection and visualization of asymmetric infections. ASPI can detect both consistent bias towards one side, and inconsistent bias in which the left side is favored in some hosts and the right in others. In this vignette ASPI is demonstrated on both observed and simulated parasite distributions. The first step is to load the aspi library:
+
+```{r}
+library(aspi)
+```
+
+*Diplostomum*
 
 ##Detection of deviation from symmetry
 
 ###Replicated G-tests of goodness-of-fit
-Replicated G-tests of goodness-of-fit [@biometry] are ASPI's default method for detecting bilateral asymmetry. This procedure computes four different G-statistics:
+Replicated G-tests of goodness-of-fit [@biometry] provide a comprehensive analysis of deviations from bilateral symmetry. This procedure computes four different G-statistics:
 
 * **Total G** - tests null hypothesis that overall the parasite distributions in all individual hosts do not depart from symmetry.
 * **Pooled G** - evaluates the null hypothesis that the ratio of the total number of parasites from each side does not differ from symmetry.
@@ -29,13 +35,53 @@ G-tests involve logarithmic transformation and so cannot be applied to counts of
 * the ratio of the total number of parasites on each side doesn't differ from 1:1 (equivalent to the pooled G-test);
 * the distribution of parasites in an individual host is symmetrical.
 
+##Trematode infections in fish eyes
+*Diplostomum* spp. (Trematoda) are common parasites of freshwater fishes. Here we use two datasets describing the distribution of *Diplostomum* spp. metacercariae in the eyes of fifty ruffe, *Gymnocephalus cernuus*. The first dataset comprises the numbers of metacercariae found in each eye, excluding the lens (i.e. the choroid, retina and humors). The dataset is formatted as a data.frame with two columns; the first column is the number of parasites found in the left eye and the 2nd column is the number of parasites found in the right eye. Here are the data for the first ten hosts:
+```{r}
+head(diplostomum_eyes_excl_lenses, 10)
+```
+
+The row.names are host IDs. To detect bilateral asymmetry we apply replicated G-tests of goodness-of-fit:
+```{r}
+results <- g.test(diplostomum_eyes_excl_lenses)
+```
+
+First we inspect the pooled, heterogeneity and total G-statistics:
+```{r}
+results$summary
+```
+
+The total G-test statistic is highly significant and so the null hypothesis of overall symmetry can be rejected. The pooled G-test (p-value = 0.004) suggests that the total number of parasites from each side differs from symmetry. 
+```{r}
+#total number of parasites on left side
+sum(diplostomum_eyes_excl_lenses$left)
+#total number of parasites on right side
+sum(diplostomum_eyes_excl_lenses$right)
+#ratio
+sum(diplostomum_eyes_excl_lenses$left) / sum(diplostomum_eyes_excl_lenses$right)
+```
+
+Before concluding that there is a slight bias towards the left eye, we need to consider the heterogeneity G-test. The p-value for this test is highly significant, revealing that the proportions of metacercariae in the left and right eyes varies from host to host.
+
+The individual G-test identifies which of the hosts have asymmetrical parasite distributions. Here are the results for the first ten hosts:
+```{r}
+head(results$hosts, 10)
+```
+
 ##Data format
 Data for analysis should be in a matrix of data.frame with two numeric columns. Each row represents one host. The first column is the number of parasites recorded from the left-side of the host and the 2nd column is the number of parasites recorded from the right-side. Identifiers for hosts can be provided as row names.
 
-```r
-devtools::load_all()
+```{r}
+# load library
+library(aspi)
+# display dataset
 simulated_symmetrical_infection
 ```
+
+```{r, echo=TRUE, results='asis'}
+knitr::kable(simulated_symmetrical_infection)
+```
+
 
 ###Correction for multiple comparisons
 When applying hypothesis tests to individual hosts we have to control for multiple comparisons using one of the following two procedures:
@@ -78,3 +124,5 @@ Also a quote using `>`:
 
 > "He who gives up [code] safety for [code] speed deserves neither."
 ([via](https://twitter.com/hadleywickham/status/504368538874703872))
+
+##References

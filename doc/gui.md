@@ -62,7 +62,7 @@ The number of infections reported to be asymmetric will depend on the statistica
 
 ##4. Individual hosts
 
-<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/individual_hosts_tab.PNG" width="550" alt="Start screen">
+<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/individual_hosts_tab.PNG" width="550" alt="Individual hosts tab">
 
 This tab shows the results of indvidual hypothesis tests applied to each host. In the case of the G-test, seven columns are displayed:
 * **Host** - unique host identifier
@@ -79,13 +79,13 @@ If the exact binomial test is used, the test statistic column is not displayed. 
 
 ##5. Histogram
 
-<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/histogram_tab.PNG" width="550" alt="Start screen">
+<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/histogram_tab.PNG" width="550" alt="Histogram tab">
 
 The histogram shows the distribution of fold differences in abundance between left and right sides. For each host the number of parasites on the right is divided by the number on the left, and the result is binary log transformed. The binary log ratio will be negative if there are more parasites on the left than right, and positive if there are more parasites on the right than left. A binary log ratio of one corresponds to a one-fold difference, i.e. double the number of parasites. Perfect symmetry is a binary log ratio of zero. An image of the histogram can be downloaded in either PNG or PDF format.
 
 ##6. Volcano Plot
 
-<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/volcano_plot_tab.PNG" width="550" alt="Start screen">
+<img src="https://raw.githubusercontent.com/WaylandM/aspi/master/images/volcano_plot_tab.PNG" width="550" alt="Volcano plot tab">
 
 This plot shows statistical significance (-log10(p-value)) of G-tests for asymmetry of parasite distributions in individual hosts *vs* fold difference (binary log ratio) in parasite abundance between right and left. Each point in the scatterplot represents the parasite distribution in an individual host. The dashed horizontal line represents the chosen p-value threshold. Parasite distributions deviating significantly from symmetry are shown as red squares, whereas those not differing signicantly from a 1:1 ratio are represented by blue circles. Changing the **Multiple Test Correction** and or **Significance level** in the control panel will update the plot.
 

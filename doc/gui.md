@@ -1,6 +1,11 @@
 #ASPI Web Application
 
-This is a guide to using the web application. 
+This is a guide to using the free web application which is available at:
+
+[https://wayland.shinyapps.io/aspi](https://wayland.shinyapps.io/aspi)
+
+You can also [run the web application on your own computer](https://github.com/WaylandM/aspi/blob/master/doc/running_locally.md).
+
 
 ##1. Read data
 

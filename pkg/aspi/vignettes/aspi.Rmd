@@ -100,7 +100,7 @@ We conclude that *Diplostomum* spp. infections of the eyes (excluding the lenses
 For visualization the proportion of parasites in each eye can be expressed as a binary log transformed ratio. These ratios can be plotted as a histogram:
 ```{r, fig.show='hold'}
 
-plotHistogram(diplostomum_eyes_excl_lenses, main="Histogram")
+plotHistogram(diplostomum_eyes_excl_lenses, nBreaks=20, main="Histogram")
 ```
 
 Alternatively, these ratios can be combined with corresponding p-values from individual G-tests in a volcano plot:
@@ -139,6 +139,63 @@ length(results$hosts[,1])
 
 
 ## Further examples
-Here are examples of how 
+Here are further examples of the results returned from replicated G-tests of goodness-of-fit under different scenarios. Simulated datasets have been generated for parasitic infections showing:
+
+1. symmetry
+2. left bias with the left:right ratio varying between hosts
+3. left bias with the left:right ratio similar in all hosts
+4. asymmetry with inconsistent bias; left bias in some hosts and right in others
+
+###Symmetry
+```{r}
+g.test(simulated_symmetrical_infection)
+```
+
+In this simulated dataset there are similar numbers of parasites on each side. Pooled, heterogeneity and total G-test statistics are not significant at $\alpha = 0.05$. Individual G-tests show that parasite distributions do not differ from symmetry in any of the ten hosts.
+
+###Left bias with the left:right ratio varying between hosts
+```{r}
+g.test(simulated_left_bias_heterogeneous_proportions)
+```
+
+In this example there are more parasites on the left than the right in every host. Furthermore, the proportion of parasites on the left and right sides varies betweeen hosts. For example, in host 1 there are three times as many parasites on the left than on the right, whereas in host 3 the ratio is approximately 1.6:1.
+
+Pooled, heterogeneity and total G-test statistics are all highly significant (p<0.001).
+
+* A significant total G-test indicates that overall the parasite distributions deviate from symmetry in some way.
+* A significant pooled G-test shows that the sum of the counts of the parasites from the left side of hosts differs from the sum of the counts of the parasites from the right side of hosts.
+* A significant heterogeneity G-test reveals that the proportion of parasites found on the left and right sides, varies from host to host.
+
+Individual G-tests demonstrate a highly significant (FDR corrected p-value < 0.00001) difference between the numbers of parasites found on the left and right sides in all 10 hosts.
+
+###Left bias with the left:right ratio similar in all hosts
+```{r}
+g.test(simulated_left_bias_homogeneous_proportions)
+```
+
+Similar to the previous data-set, this example also shows a left-bias. However, in this example the ratio of the number of parasites on the left side to the number on the right is aproximately 2:1 in all hosts.
+
+The pooled and total G-test statistics are highly significant. However, the heterogeneity G-test statistic is not significant at $\alpha = 0.05$.
+
+* A significant total G-test indicates that overall the parasite distributions deviate from symmetry in some way.
+* A significant pooled G-test shows that the sum of the counts of the parasites from the left side of hosts differs from the sum of the counts of the parasites from the right side of hosts.
+* A non-significant heterogeneity G-test suggests that the proportion of parasites found on the left and right sides does not vary between hosts.
+
+All individual G-tests are significant (FDR corrected p-value < 0.001), demonstrating that the left bias occurs in all 10 hosts.
+
+###Asymmetry with inconsistent bias
+```{r}
+g.test(simulated_asymmetry_inconsistent_bias)
+```
+
+In this example some hosts have many more parasites on the left than right, whereas others have more on the right than left.
+
+The hetereogeneity and total G-test statistics are both highly significant, but the pooled G-test is not significant at $\alpha = 0.05$.
+
+* A significant total G-test statistic indicates that overall the parasite distributions deviate from symmetry in some way.
+* A non-significant pooled G-test shows there is no evidence of bias towards one side.
+* A significant heterogeneity G-test reveals that the proportion of parasites on the left and right sides varies from host to host.
+
+If we choose an FDR adjusted p-value of 0.05 as our significance threshold, we find five of ten hosts have asymmetric distributions of parasites. Of these five, three show a left bias and two a right bias. This is an example of inconsistent bias.
 
 ##References

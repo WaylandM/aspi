@@ -18,6 +18,6 @@ Experienced users of [R](http://www.r-project.org) may prefer to use the R packa
 
 [Running the web application on your own computer](https://github.com/WaylandM/aspi/blob/master/doc/running_locally.md)
 
-[Using the command line interface](https://github.com/WaylandM/aspi/blob/master/doc/cli.md)
+[Using the R package](https://github.com/WaylandM/aspi/blob/master/doc/using_R_package.md)
 
 [Example analyses showing interpretation of test results](https://github.com/WaylandM/aspi/blob/master/doc/examples.md)

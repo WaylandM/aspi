@@ -9,7 +9,7 @@ You can also [run the web application on your own computer](https://github.com/W
 
 Experienced users of [R](http://www.r-project.org) may prefer to use the R package which is available on [CRAN](https://cran.r-project.org):
 
-[https://cran.r-project.org/web/packages/aspi/index.html](https://cran.r-project.org/web/packages/aspi/index.html)
+[https://cran.r-project.org/package=aspi](https://cran.r-project.org/package=aspi)
 
 
 

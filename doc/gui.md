@@ -1,4 +1,4 @@
-#ASPI Graphical User Interface (GUI)
+#ASPI Web Application
 
 This is a guide to using the web application. 
 

@@ -34,7 +34,7 @@ it is shown as a red square, otherwise as a blue circle.
 }
 \examples{
 plotVolcano(diplostomum_eyes_excl_lenses)
-plotVolcano(diplostomum_eyes_excl_lenses, test="G", pAdj="EB", sigThresh=0.1,
+plotVolcano(diplostomum_eyes_excl_lenses, test="G", pAdj="BH", sigThresh=0.1,
 main="Diplostomum metacercariae in eyes of ruffe")
 }
 

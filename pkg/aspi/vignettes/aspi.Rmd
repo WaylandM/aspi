@@ -17,8 +17,6 @@ When parasites invade paired structures of their host non-randomly, the resultin
 library(aspi)
 ```
 
-*Diplostomum*
-
 ##Detection of deviation from symmetry
 
 ###Replicated G-tests of goodness-of-fit
@@ -36,7 +34,10 @@ G-tests involve logarithmic transformation and so cannot be applied to counts of
 * the distribution of parasites in an individual host is symmetrical.
 
 ##Trematode infections in fish eyes
-*Diplostomum* spp. (Trematoda) are common parasites of freshwater fishes. Here we use two datasets describing the distribution of *Diplostomum* spp. metacercariae in the eyes of fifty ruffe, *Gymnocephalus cernuus*. The first dataset comprises the numbers of metacercariae found in each eye, excluding the lens (i.e. the choroid, retina and humors). The dataset is formatted as a data.frame with two columns; the first column is the number of parasites found in the left eye and the 2nd column is the number of parasites found in the right eye. Here are the data for the first ten hosts:
+*Diplostomum* spp. (Trematoda) are common parasites of freshwater fishes. Here we use two datasets describing the distribution of *Diplostomum* spp. metacercariae in the eyes of fifty ruffe, *Gymnocephalus cernuus*. 
+
+### Infections of the eye excluding lens
+The first dataset comprises the numbers of metacercariae found in each eye, excluding the lens (i.e. the choroid, retina and humors). The dataset is formatted as a data.frame with two columns; the first column is the number of parasites found in the left eye and the 2nd column is the number of parasites found in the right eye. Here are the data for the first ten hosts:
 ```{r}
 head(diplostomum_eyes_excl_lenses, 10)
 ```
@@ -51,7 +52,7 @@ First we inspect the pooled, heterogeneity and total G-statistics:
 results$summary
 ```
 
-The total G-test statistic is highly significant and so the null hypothesis of overall symmetry can be rejected. The pooled G-test (p-value = 0.004) suggests that the total number of parasites from each side differs from symmetry. 
+The total G-test statistic is highly significant and so the null hypothesis of overall symmetry can be rejected. The pooled G-test (p-value = 0.004) suggests that the total number of parasites from each side differs from symmetry. Let's calculate the total number of parasites found on each side:
 ```{r}
 #total number of parasites on left side
 sum(diplostomum_eyes_excl_lenses$left)
@@ -60,69 +61,84 @@ sum(diplostomum_eyes_excl_lenses$right)
 #ratio
 sum(diplostomum_eyes_excl_lenses$left) / sum(diplostomum_eyes_excl_lenses$right)
 ```
-
-Before concluding that there is a slight bias towards the left eye, we need to consider the heterogeneity G-test. The p-value for this test is highly significant, revealing that the proportions of metacercariae in the left and right eyes varies from host to host.
-
-The individual G-test identifies which of the hosts have asymmetrical parasite distributions. Here are the results for the first ten hosts:
+However, this slight left bias in the pooled data, doesn't necessarily mean that we would expect to find a left bias in most hosts. The p-value for the heterogeneity G-test is highly significant, revealing that the proportions of metacercariae in the left and right eyes varies from host to host. The individual G-test identifies which of the hosts have asymmetrical parasite distributions. Here are the results for the first ten hosts:
 ```{r}
 head(results$hosts, 10)
 ```
+The seven columns of the above data.frame are:
 
-##Data format
-Data for analysis should be in a matrix of data.frame with two numeric columns. Each row represents one host. The first column is the number of parasites recorded from the left-side of the host and the 2nd column is the number of parasites recorded from the right-side. Identifiers for hosts can be provided as row names.
+* **Host** - host identifier
+* **Left** - count of parasites on left side
+* **Right** - count of parasites on right side
+* **G** - Individual G-statistic
+* **p** - p-value
+* **BH** - p-value adjusted for multiplicity using procedure of @BH1995
+* **Holm** - p-value adjusted for multiplicity using the procedure of @Holm1979
 
+The raw p-value has to be adjusted for multiplicity, because an individual G-test is applied to each host. If the null hypothesis of symmetry is true for all 50 hosts, at a significance level of 5% the probability of getting at least one Type I error (false rejection of the null hypothesis) is $1-(1-0.05)^{50} = 0.923$; the expected number of significant results obtained purely by chance would be $50 \times 0.05 = 2.5$. Holm's procedure controls the familywise error rate (FWER), i.e. the probability of a single Type I error. However, guarding against a single Type I error will be unnecessarily conservative for many studies, especially those surveying a large number of hosts. If a small number of false positives among the set of rejected null hypotheses can be tolerated, then it will be preferable to control the false discovery rate (FDR) using the procedure of @BH1995.
+
+At the conventional significance level of 5%, Holm's procedure finds 11 of the 50 individual G-tests to be significant:
 ```{r}
-# load library
-library(aspi)
-# display dataset
-simulated_symmetrical_infection
+sum(results$hosts$Holm<0.05)
 ```
 
-```{r, echo=TRUE, results='asis'}
-knitr::kable(simulated_symmetrical_infection)
+Benjamini and Hochberg's method provides more power to detect asymmetric infections, identifying a total of 19, although one (5% of 19) of these is likely to be a false positive:
+```{r}
+sum(results$hosts$BH<0.05)
 ```
 
+These asymmetric infections identified with the aid of Benjamini and Hochberg's procedure can be classified according to whether they show left or right bias:
+```{r}
+# Number of asymmetric infections showing left bias
+sum(results$hosts$BH<0.05 & results$hosts$Left>results$hosts$Right)
+# Number of asymmetric infections showing right bias
+sum(results$hosts$BH<0.05 & results$hosts$Right>results$hosts$Left)
+```
 
-###Correction for multiple comparisons
-When applying hypothesis tests to individual hosts we have to control for multiple comparisons using one of the following two procedures:
+We conclude that *Diplostomum* spp. infections of the eyes (excluding the lenses) show bilateral asymmetry in a large proportion of the sampled ruffe. Moreoever, the bias is inconsistent, with parasites favoring the left eye in some hosts and the right in others.
 
-####False discovery rate (FDR)
-The FDR is the proportion of false positives among all significant test results. Benjamini and Hochberg's method is used to control the FDR.
-
-####Familywise error rate (FWER)
-The FWER is the probability of a single false positive among a collection (family) of hypothesis tests. Holm's procedure is used to control the FWER.
-
-
-
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
+For visualization the proportion of parasites in each eye can be expressed as a binary log transformed ratio. These ratios can be plotted as a histogram:
 ```{r, fig.show='hold'}
 
-plot(10:1)
+plotHistogram(diplostomum_eyes_excl_lenses, main="Histogram")
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+Alternatively, these ratios can be combined with corresponding p-values from individual G-tests in a volcano plot:
+```{r, fig.show='hold'}
+plotVolcano(diplostomum_eyes_excl_lenses, test="G", pAdj="BH", sigThresh=0.1,
+main="Volcano Plot")
 ```
 
-Also a quote using `>`:
+The dashed horizontal line in the volcano plot represents the chosen p-value threshold. Parasite distributions deviating significantly from symmetry are shown as red squares, whereas those not differing significantly from a 1:1 ratio are represented by blue circles.
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+###Infections of the lens of the eye
+The second dataset comprises observations on the distribution of *Diplostomum* spp. metacercariae in the lenses of the eyes of the ruffe. Here are the data for the first ten hosts:
+```{r}
+head(diplostomum_lenses, 10)
+```
+Note that the first eight hosts are not infected. The total number of ruffe with *Diplostomum* spp. infection of the lens is:
+```{r}
+sum(diplostomum_lenses$left>0 | diplostomum_lenses$right>0)
+```
+
+G-tests involve logarithmic transformation and so cannot be applied to counts of zero, as found in this dataset. Furthermore, G-tests are not recommended when counts are below ten. The g.test function will ignore uninfected hosts in this dataset, but will raise an error, because some hosts only have an infection in one eye. In this situation, binomial exact test should be used instead:
+```{r}
+results <- eb.test(diplostomum_lenses)
+# pooled test p-value
+results$pooled
+# results for the first ten infected hosts
+head(results$hosts, 10)
+# smallest FDR adjusted p-value for an individual host
+min(results$hosts$BH)
+```
+No evidence of asymmetry in lens infections was found by either the pooled test or in the tests of the individual host infections. Note that the eb.test function restricted analysis to the 31 infected hosts:
+```{r}
+length(results$hosts[,1])
+```
+
+
+
+## Further examples
+Here are examples of how 
 
 ##References

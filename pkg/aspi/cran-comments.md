@@ -6,7 +6,9 @@
 There were no ERRORs or WARNINGs.
 
 There was 1 NOTE:
+
 * checking CRAN incoming feasibility ... NOTE
 
 Possibly mis-spelled words in DESCRIPTION:
+
   ASPI (3:8)

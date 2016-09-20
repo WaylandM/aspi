@@ -81,7 +81,7 @@ In this example there are more parasites on the left than the right in every hos
 Pooled, heterogeneity and total G-test statistics are all highly significant (p<0.001). 
 
 * A significant total G-test indicates that overall the parasite distributions deviate from symmetry in some way. 
-* A significant pooled G-test shows that the parasites occur in larger numbers on one side of the host.
+* A significant pooled G-test shows that the sum of the counts of the parasites from the left side of hosts differs from the sum of the counts of the parasites from the right side of hosts.
 * A significant heterogeneity G-test reveals that the proportion of parasites found on the left and right sides, varies from host to host.
 
 
@@ -129,7 +129,7 @@ Similar to the previous data-set, this example also shows a left-bias. However, 
 
 The pooled and total G-test statistics are highly significant. However, the heterogeneity G-test statistic is not significant at the 5% threshold.
 * A significant total G-test indicates that overall the parasite distributions deviate from symmetry in some way. 
-* A significant pooled G-test shows that the parasites occur in larger numbers on one side of the host.
+* A significant pooled G-test shows that the sum of the counts of the parasites from the left side of hosts differs from the sum of the counts of the parasites from the right side of hosts.
 * A non-significant heterogeneity G-test suggests that the proportion of parasites found on the left and right sides does not vary between hosts.
 
 

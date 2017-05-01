@@ -1,4 +1,4 @@
-#Analysis of Symmetry of Parasitic Infections (ASPI)
+# Analysis of Symmetry of Parasitic Infections (ASPI)
 ASPI provides tools for the detection and visualization of asymmetry in parasitic infections. ASPI can detect both consistent bias towards one side, and inconsistent bias in which the left side is favored in some hosts and the right in others. ASPI is implemented as both a [R](http://www.r-project.org) package and web application.
 
 The free web application is available at:
@@ -13,7 +13,7 @@ Experienced users of [R](http://www.r-project.org) may prefer to use the R packa
 
 
 
-##Documentation
+## Documentation
 [Using the web interface](https://github.com/WaylandM/aspi/blob/master/doc/gui.md)
 
 [Running the web application on your own computer](https://github.com/WaylandM/aspi/blob/master/doc/running_locally.md)

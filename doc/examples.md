@@ -1,4 +1,4 @@
-#Examples
+# Examples
 
 Here are examples of the results ASPI returns under different scenarios. Simulated data sets have been generated for parasitic infections showing: 
 
@@ -7,8 +7,8 @@ Here are examples of the results ASPI returns under different scenarios. Simulat
 3. [left bias with left:right ratio similar in all hosts](#left-bias-homogeneous)
 4. [asymmetry with inconsistent bias left bias in some hosts and right in others](#asymmetry-with-inconsistent-bias)
 
-##Symmetry
-###Data
+## Symmetry
+### Data
 Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_symmetrical_infection.csv)
 
 |Host Accession Number 	|left 	|right|
@@ -26,7 +26,7 @@ Simulated data file: [simulated_symmetrical_infection.csv](https://github.com/Wa
 
 Similar numbers of parasites on each side.
 
-###Results
+### Results
 
 |Test 	|df 	|G 	|p |
 |-------|-----|---|---|
@@ -51,8 +51,8 @@ Pooled, heterogeneity and total G-test statistics are not significant at an alph
 
 Individual G-tests show that parasite distributions do not differ from symmetry in any of the 10 hosts.
 
-##Left bias with left:right ratio varying between hosts<a id="left-bias-heterogeneous"></a>
-###Data
+## Left bias with left:right ratio varying between hosts<a id="left-bias-heterogeneous"></a>
+### Data
 Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_heterogeneous_proportions.csv)
 
 |Host Accession Number 	|left 	|right|
@@ -70,7 +70,7 @@ Simulated data file: [simulated_left_bias_heterogeneous_proportions.csv](https:/
 
 In this example there are more parasites on the left than the right in every host. Furthermore, the proportion of parasites on the left and right sides varies betweeen hosts. For example, in host **1** there are three times as many parasites on the left than on the right, whereas in host **3** the ratio is approximately 1.6:1.
 
-###Results
+### Results
 
 |Test	 |df	 |G	 |p  |
 |------|-----|---|---|
@@ -100,8 +100,8 @@ Pooled, heterogeneity and total G-test statistics are all highly significant (p<
 
 Individual G-tests demonstrate a highly significant (FDR corrected p-value < 0.00001) difference between the numbers of parasites found on the left and right sides in all 10 hosts.
 
-##Left bias with left:right ratio similar in all hosts<a id="left-bias-homogeneous"></a>
-###Data
+## Left bias with left:right ratio similar in all hosts<a id="left-bias-homogeneous"></a>
+### Data
 Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_left_bias_homogeneous_proportions.csv)
 
 |Host Accession Number 	|left 	|right|
@@ -119,7 +119,7 @@ Simulated data file: [simulated_left_bias_homogeneous_proportions.csv](https://g
 
 Similar to the previous data-set, this example also shows a left-bias. However, in this example the ratio of the number of parasites on the left side to the number on the right is aproximately 2:1 in all hosts.
 
-###Results
+### Results
 
 |Test 	|df 	|G 	|p|
 |-------|-----|---|---|
@@ -148,7 +148,7 @@ The pooled and total G-test statistics are highly significant. However, the hete
 
 All individual G-tests are significant (FDR corrected p-value < 0.001), demonstrating that the left bias occurs in all 10 hosts.
 
-##Asymmetry with inconsistent bias<a id="asymmetry-with-inconsistent-bias"></a>
+## Asymmetry with inconsistent bias<a id="asymmetry-with-inconsistent-bias"></a>
 Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.com/WaylandM/aspi/blob/master/data/parasites/simulated_asymmetry_inconsistent_bias.csv)
 
 |Host Accession Number 	|left 	|right|
@@ -166,7 +166,7 @@ Simulated data file: [simulated_asymmetry_inconsistent_bias.csv](https://github.
 
 In this example some hosts have many more parasites on the left than right, whereas others have more on the right than left.
 
-###Results
+### Results
 
 |Test 	|df 	|G 	|p|
 |-------|-----|---|---|

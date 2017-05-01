@@ -1,5 +1,5 @@
-#Running ASPI on your local computer
-##Required software
+# Running ASPI on your local computer
+## Required software
 To run the ASPI web application on your local computer you will need to install [R](http://www.r-project.org/), the [Shiny](http://shiny.rstudio.com/) web application framework and the DT package. 
 
 [R](http://www.r-project.org/) can be downloaded from http://www.r-project.org/. Once you have installed R, you can install Shiny  and DT by executing the following instruction on the R command line:
@@ -7,7 +7,7 @@ To run the ASPI web application on your local computer you will need to install 
 install.packages(c("shiny","DT"), dependencies=TRUE)
 ```
 
-##Launching the web application
+## Launching the web application
 Run the following command in R to launch the application:
 ```r
 shiny::runGitHub(repo="aspi", username="waylandm", subdir="gui")
